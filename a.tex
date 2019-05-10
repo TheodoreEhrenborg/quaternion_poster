@@ -149,7 +149,7 @@
 {
 \title
 {
-\fontsize{120}{150}\selectfont%1st number is font, 2nd is spacing 
+\fontsize{120}{120}\selectfont%1st number is font, 2nd is spacing 
 \begin{center}
 \textbf { Classifying Quaternion Identities }
 \end{center}
@@ -1027,13 +1027,15 @@ Identity~\eqref{Identity_3} follows from taking the norm of the quaternion produ
     (x + iy + jz + kw)(x - iy - jz - kw) 
     = (x^2 + y^2 + z^2 + w^2 ) + i(0) + j(0) + k(0).
     \end{align*}
+The other five identities are derived in a similar manner.
+\vanish{
 Identity~\eqref{Identity_4} follows from taking the norm of the quaternion product        
     \begin{align*}
     &(x + iy + jz + kw)(x + iy + jw + kz) \\
     &= (x^2 - y^2 - 2zw ) + i(2xy + z^2 -w^2) \\
         &+ j(xz - yz + xw + yw) + k(xz - yz + xw + yw).
     \end{align*}
-Identity~\eqref{Identity_5} follows from taking the norm of the quaternion product            
+Identity~\eqref{Identity_5} follows from taking the norm of the quaternion product   
     \begin{align*}
     &(x + iy + jz + kw)(x + iy + jw - kz) \\
     &= (x^2 - y^2 ) + i(2xy - z^2 - w^2) \\
@@ -1051,12 +1053,13 @@ Identity~\eqref{Identity_7} follows from taking the norm of the quaternion produ
     &= (x^2 - yz - yw - zw ) + i(xy + xz + yz - w^2) \\
         &+ j(-y^2 + xz + xw + zw) + k(xy - z^2 + xw + yw).
     \end{align*}
-Finally, Identity~\eqref{Identity_8} follows from taking the norm of the quaternion product    
+Finally, Identity~\eqref{Identity_8} follows from taking the norm of the quaternion product
     \begin{align*}
     &(x + iy + jz + kw)(x + iz + jw - ky) \\
     &= (x^2 - yz + yw - zw ) + i(xy + xz - yz - w^2) \\
-        &+ j(y^2 + xz + xw + zw) + k(xw - xy - z^2  + yw). \tag*{\qedhere}
+        &+ j(y^2 + xz + xw + zw) + k(xw - xy - z^2  + yw). \tag*{\qedhere} 
     \end{align*}
+}
 \end{proof}
 
 
