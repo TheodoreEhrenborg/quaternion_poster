@@ -9,7 +9,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% Last edited: May 9, 2019
+% Last edited: May 10, 2019
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -181,32 +181,39 @@
 
 
 
-The author's previous work in~\cite{Ehrenborg_2018}
-focused on characterizing the
+The author's previous work \cite{Ehrenborg_2018}
+focused on characterizing 
 integer solutions to
 $a^2 + b^2 + c^2 + d^2 = e^2$.
-This paper explores the polynomial solutions
+Current research explores the polynomial solutions
 in $ \Zzz[x,y,z,w] $ to
-$a^2 + b^2 + c^2 + d^2 = e^n$, where
+\begin{equation}
+\label{eq:e^n}
+a^2 + b^2 + c^2 + d^2 = e^n,
+\end{equation}
+where
 $e = x^2 + y^2 + z^2 + w^2$.
 
 In \cite{Ehrenborg_2018} the author characterized integer
-solutions by viewing $a^2 + b^2 + c^2 + d^2 = e^2$
+solutions by viewing~\eqref{eq:e^n}
 as a product of two quaternions. This gave
 rise to polynomial solutions to
 $a^2 + b^2 + c^2 + d^2 = e^2$
 with $e = x^2 + y^2 + z^2 + w^2$.
 The paper found that an upper bound for the number
-of such solutions is $57$. This paper seeks to
-improve that bound, as well as to investigate
+of such solutions is $57$.
+
+Goal 1: Improve the bound for the number of solutions.
+
+Goal 2: Investigate
 the cases when $n > 2$.
 
 
 
-Recall that the \emph{complex numbers} $\Ccc$ are a two-dimensional
+Recall the \emph{complex numbers} $\Ccc$ are a two-dimensional
 field extension of $\Rrr$.
-Complex numbers take the form $x + iy$, where $i$ is defined to be the
-square root of $-1$ and $x,y \in \Rrr$.
+A complex number is of the form $x + iy$, where $i = \sqrt{-1}$
+and $x,y \in \Rrr$.
 Addition is component-wise, and multiplication
 follows from the distributive property and the fact that
 $i^2 = -1$.
@@ -220,11 +227,12 @@ The \emph{Gaussian integers} $ \Zzz[i] $ are a subring of $\Ccc$:
 
 
 
-Recall that
-the \emph{quaternions} $\mathscr{Q}$ are a four-dimensional division ring extension of $\Rrr$.
-Quaternions were first discovered by Sir William Rowan Hamilton;
-see~\cite{Hamilton}.
-Quaternions take the form $x + iy + jz + kw$, with
+
+The \emph{quaternions} $\mathscr{Q}$ are a
+four-dimensional division ring extension of $\Rrr$.
+Quaternions were first discovered by Sir William Rowan Hamilton
+in 1844~\cite{Hamilton}.
+A quaternion has the form $x + iy + jz + kw$, with
 $x,y,z,w \in \Rrr$, and the linearly independent
 elements $i$, $j$, $k$ satisfy the relations:
 \begin{align*}
@@ -497,35 +505,6 @@ the signed symmetric group $ \mathfrak{S}_2^\pm $.
 The relation $ \simeq $ is an equivalence relation.
 \end{lemma}
 
-\begin{proof}
-\bf
-The relation $ \simeq $ satisfies the three conditions of an equivalence relation:
-\begin{enumerate}
-\item Reflexive Property: If we choose $ \mu $ and $ \mu'$ to be the identity map $ z \mapsto z $, 
-then $ h(z) \simeq h(z) $.
-
-\item Symmetric Property: Let  $ h(z) \simeq h'(z) $, that is, there exist mappings 
-$ \mu, \mu' \in M $
-such that $ \mu( h( \mu'( z ) ) )  = h'(z) $.
-The set $M$ is isomorphic to the signed symmetric group $ \mathfrak{S}_2^\pm $,
-so every mapping in $M$
-has an inverse in $M$. As  $ \mu^{-1}( h'( (\mu')^{-1}( z ) ) )  = h(z) $,
-we have $ h'(z) \simeq h(z) $.
-
-\item Transitive Property: Let $ a(z) \simeq b(z) $ and $ b(z) \simeq c(z) $. By the 
-Symmetric Property, we have $ c(z) \simeq b(z) $. Thus there exist mappings
-$ \mu, \mu', \nu, \nu' \in M $ such that $ \mu( a( \mu'( z ) ) )  = b(z) $ and 
-$ \nu( c( \nu'( z ) ) )  = b(z) $. As a result we obtain
-\[
-\mu( a( \mu'( z ) ) ) = \nu( c( \nu'( z ) ) ). 
-\]
-Thus we have
-\[
-a(  z  ) = \mu^{-1}( \nu( c( (\mu')^{-1}( \nu'( z ) ) ) ) ).
-\]
-This means that $ c(z) \simeq a(z) $ or $ a(z) \simeq c(z) $. \qedhere
-\end{enumerate}
-\end{proof}
 
 Recall that given $ a(x,y), b(x,y) \in \Zzz[x,y] $,
 we can find $ h(z) \in \Zzz [i][x,y] $
