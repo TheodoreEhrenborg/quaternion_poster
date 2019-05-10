@@ -45,6 +45,7 @@
 \usepackage{diagbox}
 
 
+
 \usetikzlibrary{math}
 
 \parskip3mm
@@ -135,6 +136,9 @@
 
 
 \newcommand{\fix}[1]{\todo[inline]{#1}}
+
+\counterwithout{equation}{section}
+
 
 \begin{document}
 
@@ -407,12 +411,17 @@ Taking norms gives the identity
 \end{example}
 
 
+\newpage
+
+\noindent
+\begin{center}
+{\fontsize{\MySectionFontSize}{\MySectionSpacing}\selectfont \textbf
+ {The case where $ p = m = 2$}
+}
+\end{center}
 
 
 
-
-
-\section{The case where $ p = m = 2$}
 
 
 In the case where $ p = m = 2$, Definition~\ref{def:general} has an alternate form.
@@ -441,29 +450,29 @@ such that $ \varphi( h( \varphi'( z ) ) )  = h'(z) $.
 
 
 
-\begin{figure}[h]
+\begin{figure}[t]
 
 
 \begin{center}
 \begin{tikzpicture}
 
 \tikzmath{
-\scale = .7;
+\scale = 1;
 }
 
 
 \draw[thick] (-5*\scale,0) -- (5*\scale,0);
 \draw[thick] (0,-5*\scale) -- (0,5*\scale);
 
-\fill (2 * \scale , 4*\scale) circle (0.1*\scale) node[anchor=east] {\Large $ z $ };
-\fill (4 * \scale , -2*\scale) circle (0.1*\scale) node[anchor=west] {\Large $ -iz $ };
-\fill (-2 * \scale , -4*\scale) circle (0.1*\scale) node[anchor=west] {\Large $ -z $ };
-\fill (-4 * \scale , 2*\scale) circle (0.1*\scale) node[anchor=east] {\Large $ iz $ };
+\fill (2 * \scale , 4*\scale) circle (0.1*\scale) node[anchor=east] {\LARGE $ z $ };
+\fill (4 * \scale , -2*\scale) circle (0.1*\scale) node[anchor=west] {\LARGE $ -iz $ };
+\fill (-2 * \scale , -4*\scale) circle (0.1*\scale) node[anchor=west] {\LARGE $ -z $ };
+\fill (-4 * \scale , 2*\scale) circle (0.1*\scale) node[anchor=east] {\LARGE $ iz $ };
 
-\fill (2 * \scale , -4*\scale) circle (0.1*\scale) node[anchor=east] {\Large $ \bar{z} $ };
-\fill (4 * \scale , 2*\scale) circle (0.1*\scale) node[anchor=west] {\Large $ i\bar{z} $ };
-\fill (-2 * \scale , 4*\scale) circle (0.1*\scale) node[anchor=west] {\Large $ -\bar{z} $ };
-\fill (-4 * \scale , -2*\scale) circle (0.1*\scale) node[anchor=east] {\Large $ -i\bar{z} $ };
+\fill (2 * \scale , -4*\scale) circle (0.1*\scale) node[anchor=east] {\LARGE $ \bar{z} $ };
+\fill (4 * \scale , 2*\scale) circle (0.1*\scale) node[anchor=west] {\LARGE $ i\bar{z} $ };
+\fill (-2 * \scale , 4*\scale) circle (0.1*\scale) node[anchor=west] {\LARGE $ -\bar{z} $ };
+\fill (-4 * \scale , -2*\scale) circle (0.1*\scale) node[anchor=east] {\LARGE $ -i\bar{z} $ };
 
   
 
@@ -660,7 +669,7 @@ one each for $ u = 0, 1, \dotsc,  \left\lfloor \myfrac{n}{2} \right\rfloor $.
 
 
 
-\begin{figure}[h]
+\begin{figure}[t]
 
 
 \begin{center}
@@ -670,26 +679,26 @@ one each for $ u = 0, 1, \dotsc,  \left\lfloor \myfrac{n}{2} \right\rfloor $.
 \hash = 0.1;
 \height = 6;
 \length = 10;
-\scale = 1;
+\scale = 2;
 }
 
 
 \draw[thick] (0,0) -- (\scale * \length,0);
-\fill (\scale * \length/2, -1) circle (0cm) node[anchor=north] {\Large $ n $ };
+\fill (\scale * \length/2, -1) circle (0cm) node[anchor=north] {\LARGE $ n $ };
 
 \draw[thick] (0,0) -- (0,\scale * \height);
-%\fill (-2, \scale * \height/2 ) circle (0cm) node[rotate=90,anchor=south] {\Large  Number of };
-%\fill (-1, \scale * \height/2 ) circle (0cm) node[rotate=90,anchor=south] {\Large  equivalence classes };
-\fill (-1, \scale * \height/2 ) circle (0cm) node[anchor=east] {\Large  $ \kappa $ };
+%\fill (-2, \scale * \height/2 ) circle (0cm) node[rotate=90,anchor=south] {\LARGE  Number of };
+%\fill (-1, \scale * \height/2 ) circle (0cm) node[rotate=90,anchor=south] {\LARGE  equivalence classes };
+\fill (-1, \scale * \height/2 ) circle (0cm) node[anchor=east] {\LARGE  $ \kappa $ };
 
 
 \foreach \y in {1, ..., \height}
-    \draw[thick] ( -\hash, \scale * \y ) node[anchor=east] {\Large \y} -- ( \hash, \scale * \y );
+    \draw[thick] ( -\hash, \scale * \y ) node[anchor=east] {\LARGE \y} -- ( \hash, \scale * \y );
 
 \foreach \x in {1, ..., \length}
 {
-   \draw[thick] ( \scale * \x, -\hash ) node[anchor=north] {\Large \x} -- ( \scale * \x, \hash ) ;
-   \fill (\scale * \x, { \scale *  floor( \x / 2 ) + \scale } ) circle (.1cm);
+   \draw[thick] ( \scale * \x, -\hash ) node[anchor=north] {\LARGE \x} -- ( \scale * \x, \hash ) ;
+   \fill (\scale * \x, { \scale *  floor( \x / 2 ) + \scale } ) circle (\scale * .1cm);
 }
   
 
@@ -787,11 +796,15 @@ verified in a similar manner to Case I.
 Thus the number of solutions in Case II is $ 8(z + 1) = 4 ( 2w + 1) + 4 = 4n + 4 $.
 \end{proof}
 
+\newpage
 
+\noindent
+\begin{center}
+{\fontsize{\MySectionFontSize}{\MySectionSpacing}\selectfont \textbf
+ {The case where $p = m = 4$}
+}
+\end{center}
 
-
-\section{The case where $p = m = 4$}
-\label{sec:4D}
 
 In this section we examine the case where
 $p = m = 4$ in equation~\eqref{equation_general}.
@@ -822,8 +835,9 @@ not equivalent.
 
 \begin{center}
 
+\Large
 
-\begin{tabular}{ r || c | c | c | c | c | c | c | c | }
+\begin{tabular}{ r || m{1cm} | m{1cm} | m{1cm} | m{1cm} | m{1cm} | m{1cm} | m{1cm} | m{1cm} | }
 \diagbox{Value}{Identity} & \eqref{Identity_1} & \eqref{Identity_2}
 & \eqref{Identity_3} & \eqref{Identity_4}
 & \eqref{Identity_5} & \eqref{Identity_6}
@@ -908,14 +922,14 @@ bound on the number of identities, but
 cannot prove that two identities are 
 equivalent.
 
-\begin{figure}[h]
+\begin{figure}[t]
 
 
 \begin{center}
 \begin{tikzpicture}
 
 \tikzmath{
-\scale = 1;
+\scale = 1.5;
 }
 
 \draw[thick,dotted] (0*\scale,0*\scale) circle(2*\scale);
@@ -1043,9 +1057,10 @@ $n = 1$ to $4$. This data appears in
 Table~\ref{table:4D}.
 
 
-\begin{table}[h]
+\begin{table}[t]
 
 
+\LARGE
 
 
 \begin{center}
@@ -1079,7 +1094,7 @@ in the case where $p = m = 4$.
 
 \end{table}
 
-\newpage
+
 
 
 
@@ -1232,50 +1247,18 @@ for reasons involving conjugates that are discussed more fully in
 the proof of Theorem~\ref{theorem_counting_4D}.
 \end{remark}
 
-\section{Conjecture for $p = m = 4$ and $ n \in \Nnn $}
-The two conjectures in this section were made in collaboration with
-Professor David Leep.
+\newpage
 
-We conjecture that when $p = m = 4$ and $ n \in \Nnn $,
-all identities of the form
-$
-\tau_1 ^ 2  + \tau_2 ^ 2  + \tau_3 ^ 2  + \tau_4 ^ 2  
-= 
-\left(  x_1 ^ 2 + x_2 ^ 2 + x_3 ^ 2 + x_4 ^ 2
-\right) ^ n 
-$
-can be written as
-a product of Lipschitz quaternions.
-This is made more precise in
-Conjecture~\ref{conjecture_Ehrenborg-Leep}.
-
-\begin{conjecture}
-\bf
-Let $ \alpha \in \Lll[x,y,z,w] $.
-If the norm $ \N(\alpha) $ has a nontrivial
-factorization over $ \Zzz[x,y,z,w] $,
-then $ \alpha $ has a nontrivial
-factorization over $ \Lll[x,y,z,w] $.
-\end{conjecture}
-The preceding conjecture implies the following conjecture.
-\begin{conjecture}
-\label{conjecture_Ehrenborg-Leep}
-\bf
-Let $ (a, b, c, d) $ be a tuple such that
-\[
-a^2 + b^2 + c^2 + d^2 = (x^2 + y^2 + z^2 + w^2)^n,
-\] 
-where $ a, b, c, d \in \Zzz[x,y,z,w]$.
-Let $\alpha = a + bi + cj + dk $.
-Then $ \alpha = \beta_1 \beta_2 \dotsm \beta_n $,
-where $ \beta_u \in \Lll[x,y,z,w] $ for $u$ in $1, \dotsc, n$.
-Moreover, let $ \beta_u = a' + b'i + c'j + d'k $. Then
-the following tuple equivalence holds: $ (a', b', c', d') \simeq (x, y, z, w) $.
-\end{conjecture}
+\noindent
+\begin{center}
+{\fontsize{\MySectionFontSize}{\MySectionSpacing}\selectfont \textbf
+ {Proof of Conjecture~\ref{conjecture_Ehrenborg-Leep} when $n=1$}
+}
+\end{center}
 
 
 
-\section{Proof of Conjecture~\ref{conjecture_Ehrenborg-Leep} when $n=1$}
+
 I have proved Conjecture~\ref{conjecture_Ehrenborg-Leep}
 in the case where $n = 1$.
 
@@ -1382,7 +1365,16 @@ positive and will not cancel. Thus there can be no such monomial~$ A $, so the o
 in $ S $ are the four desired ones.
 \end{proof}
 
-\section{Enumerative Consequences of Conjecture~\ref{conjecture_Ehrenborg-Leep}} 
+\newpage
+
+\noindent
+\begin{center}
+{\fontsize{\MySectionFontSize}{\MySectionSpacing}\selectfont \textbf
+ {Enumerative Consequences of Conjecture~\ref{conjecture_Ehrenborg-Leep}} 
+}
+\end{center}
+
+\fix{I need some statement about the conjecture. inspired}
 
 \begin{theorem}
 \label{theorem_counting_4D}
@@ -1495,10 +1487,15 @@ Note that the proof of Theorem~\ref{theorem_counting_4D}
 gives an upper bound for the number of solutions.
 \end{remark}
 
+\newpage
 
+\noindent
+\begin{center}
+{\fontsize{\MySectionFontSize}{\MySectionSpacing}\selectfont \textbf
+ {Conclusion}
+}
+\end{center}
 
-
-\section{Conclusion}
 
 
 
