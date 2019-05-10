@@ -28,7 +28,7 @@
 
 
 
-\documentclass[12pt]{article}
+\documentclass[12pt,table]{article}
 \usepackage[title]{appendix}
 \usepackage[font=Large,labelfont=bf]{caption}
 %\usepackage{abstract}
@@ -41,6 +41,8 @@
 \usepackage{pdflscape}%Prepares to flip the document
 \usepackage{todonotes}
 \usepackage{enumerate}
+\usepackage{xcolor}
+\usepackage{diagbox}
 
 
 \usetikzlibrary{math}
@@ -58,12 +60,19 @@
 \newtheorem{example}[theorem]{Example}
 \newtheorem{remarks}[theorem]{Remarks}
 \newtheorem{remark}[theorem]{Remark}
+\newtheorem{conjecture}[theorem]{Conjecture}
+
 
 \numberwithin{equation}{section}
 \usepackage[bindingoffset=0.2in,
             left=0.5in,right=0.5in,top=0.5in,bottom=0.5in,
             footskip=.25in]{geometry}%Sets margins
 \pagenumbering{gobble}%No page numbers
+
+
+
+\hyphenation{Hurwitz}
+
 
 \newcommand{\controlledbf}{}
 \newcommand{\MySpacing}{25}
@@ -74,12 +83,12 @@
 %\newcommand{\MySectionSpacing}{10}
 \newcommand{\MySectionFontSize}{40}
 %\newcommand{\MySectionFontSize}{10}
-\newcommand{\timesdots}{\times \cdots \times}
-\newcommand{\vanish}[1]{}
-\newcommand{\coveredby}{\prec}
+
+
 
 %\renewcommand{\abstractnamefont}{\fontsize{\MyFontSize}{\MySpacing}}
 %\renewcommand{\abstracttextfont}{\normalfont\small}
+
 
 
 \DeclareMathOperator{\inv}{inv}
@@ -87,31 +96,43 @@
 \DeclareMathOperator{\er}{er}
 \DeclareMathOperator{\asc}{asc}
 \DeclareMathOperator{\odd}{odd}
+\DeclareMathOperator{\Imag}{Im}
+\DeclareMathOperator{\Real}{Re}
+\DeclareMathOperator{\N}{N}
+
 
 \newcommand{\ascodd}{\asc_{\odd}}
 
 \newcommand{\doubleprime}{\prime\prime}
 
+\newcommand{\myfrac}[2]{#1 / #2}
+
 
 \font\Cp = msbm10
 
-\newcommand{\Ccc}{\hbox{\Cp C}}
-\newcommand{\Fff}{\hbox{\Cp F}}
-\newcommand{\Hhh}{\hbox{\Cp H}}
-\newcommand{\Nnn}{\hbox{\Cp N}}
-\newcommand{\Rrr}{\hbox{\Cp R}}
-\newcommand{\Sss}{\hbox{\Cp S}}
-\newcommand{\Zzz}{\hbox{\Cp Z}}
-%The above commands don't work with large font.
+\newcommand{\Ccc}{\mathbb C}
+\newcommand{\Fff}{\mathbb F}
+\newcommand{\Hhh}{\mathbb H}
+\newcommand{\Nnn}{\mathbb N}
+\newcommand{\Rrr}{\mathbb R}
+\newcommand{\Sss}{\mathbb S}
+\newcommand{\Zzz}{\mathbb Z}
+\newcommand{\Lll}{\mathbb L}
+\renewcommand{\Bbb}{\mathbb B}
+\newcommand{\Ooo}{\mathbb O}
+\newcommand{\Qqq}{\mathbb Q}
 
 \newcommand{\SSSS}{\mathfrak{S}}
 
 \newcommand{\Gaussian}[2]{\genfrac{[}{]}{0pt}{}{#1}{#2}_q}
 
 
-
+\newcommand{\vanish}[1]{}
+\newcommand{\coveredby}{\prec}
 \newcommand{\divides}{\mid}
 \newcommand{\notdivides}{\nmid}
+\newcommand{\timesdots}{\times \cdots \times}
+
 
 \newcommand{\fix}[1]{\todo[inline]{#1}}
 
@@ -234,6 +255,7 @@ usually refer to indeterminates.
 The following groups are an essential part of Definition~\ref{def:general}
 and Definition~\ref{def:2D}.
 \begin{definition}
+\bf
 The {\em symmetric group} $ \mathfrak{S}_n $ is the 
 set of all permutations $ \pi = \pi_1 \pi_2 \dotsm \pi_n $ 
 of the $ n $ element set $ \{ 1, 2, \dotsc, n \} $,
@@ -260,6 +282,7 @@ x_{\pi_j} & \text{if } \pi_j > 0 \\
 
 \begin{definition}
 \label{def:general}
+\bf
 Fix $ p, m \in \Nnn $. 
 Let $ \tau = ( \tau_1, \tau_2, \dotsc, \tau_p) $
 be a tuple of length $ p $ where 
@@ -284,6 +307,7 @@ $ ( \tau_1, \dotsc, \tau_p) \simeq ( \pm \tau_1, \dotsc, \pm \tau_p) $
 
 
 \begin{example}
+\bf
 Definition~\ref{def:general} implies that the following is true:
 \begin{align*}
 ( xz,\: y^2,\: yz )  
@@ -317,7 +341,7 @@ various tuples, where the group action is $ \mathfrak{S}_p^\pm \times \mathfrak{
 
 
 \begin{example}
-
+\bf
 Consider the case where $ p = m = 2 $ and $ n = 2$.
 The following two identities are representatives from 
 the two different equivalence classes in this case. These identities
@@ -347,10 +371,12 @@ Taking norms gives the identity
 \end{example}
 
 \begin{remark}
+\bf
 Equation~\eqref{eq:Pythagorean} dates back to Euclid; see~\cite{Euclid}. 
 \end{remark}
 
 \begin{example}
+\bf
 The following two identities are representatives from 
 the two different equivalence classes in the
 case where $ p = m = 2 $ and $ n = 3$.
@@ -395,7 +421,7 @@ In the case where $ p = m = 2$, Definition~\ref{def:general} has an alternate fo
 
 \begin{definition}
 \label{def:2D}
-
+\bf
 Let $ h(z), h'(z) \in \Zzz [i][x,y] $,
 where $ z = x + iy $.
 Let $ M $ be the following set of mappings: 
@@ -446,6 +472,7 @@ such that $ \varphi( h( \varphi'( z ) ) )  = h'(z) $.
 \end{center}
 
 \caption{
+\bf
 The set $M$ in Definition~\ref{def:2D} is isomorphic to
 the signed symmetric group $ \mathfrak{S}_2^\pm $.
 }
@@ -457,10 +484,12 @@ the signed symmetric group $ \mathfrak{S}_2^\pm $.
 
 
 \begin{lemma}
+\bf
 The relation $ \simeq $ is an equivalence relation.
 \end{lemma}
 
 \begin{proof}
+\bf
 The relation $ \simeq $ satisfies the three conditions of an equivalence relation:
 \begin{enumerate}
 \item Reflexive Property: If we choose $ \mu $ and $ \mu'$ to be the identity map $ z \mapsto z $, 
@@ -500,6 +529,7 @@ The converse is also true.
 
 
 \begin{lemma}
+\bf
 Let $ h(z) \simeq h'(z) $, where $ h(z), h'(z) \in \Zzz[i][x,y] $
 and $ z = x+ iy $.
 Suppose $ ( x^2 + y^2 ) ^ u \divides h(z) $,
@@ -507,6 +537,7 @@ where $ u \in \Nnn $. Then $ ( x^2 + y^2 ) ^ u \divides h'(z) $ also holds.
 \end{lemma}
    
 \begin{proof}
+\bf
 Let $ h(z) = ( x^2 + y^2 ) ^ u  p(z) $, where $ p(z) \in \Zzz [i][x,y] $. 
 Whatever mappings we apply to $h$ and $z$
 to obtain $ h'(z) $, we also apply to the factors of $ h(z) $. 
@@ -515,6 +546,7 @@ No mapping will remove the factor of $ ( x^2 + y^2 ) ^ u $.
 
 \vanish{
 \begin{corollary}
+\bf
 Let $ h(z), h'(z) \in \Zzz[i][x,y] $ with $ z = x+ iy $.
 \[
 h(z) \simeq h'(z) 
@@ -526,6 +558,7 @@ h(z) \simeq h'(z)
 
 \begin{corollary}
 \label{corollary_equivalence}
+\bf
 Let $ h(z), h'(z) \in \Zzz[i][x,y] $ with $ z = x+ iy $.
 Suppose $ h(z) \simeq h'(z) $. Then for all  $ u \in \Nnn \cup \{ 0 \} $,
 the following two conditions are
@@ -540,6 +573,7 @@ equivalent:
 
 \begin{theorem}
 \label{thm:2D_equivalence}
+\bf
 Consider the set of all $2$-tuples $ \tau = ( \tau_1, \tau_2 )$ where 
 $
   \tau_1 ^ 2   +   \tau_2 ^ 2   
@@ -555,6 +589,7 @@ with $ j $
 being one of $ 0, 1, \dotsc, \left\lfloor \myfrac{n}{2} \right\rfloor $.
 \end{theorem}
 \begin{proof}
+\bf
 Suppose 
 \[
 (x^2 + y^2)^n = a(x,y)^2 + b(x,y)^2,
@@ -663,6 +698,7 @@ one each for $ u = 0, 1, \dotsc,  \left\lfloor \myfrac{n}{2} \right\rfloor $.
 \end{center}
 
 \caption{
+\bf
 The number of equivalence classes $ \kappa $
 when $p = m = 2$ is $ \left\lfloor \myfrac{n}{2} \right\rfloor + 1 $ .
  }
@@ -674,7 +710,7 @@ when $p = m = 2$ is $ \left\lfloor \myfrac{n}{2} \right\rfloor + 1 $ .
 
 
 \begin{corollary}
-
+\bf
 The number of solutions $ (a, b) $ to
 \[
 a^2 + b^2 = (x^2 + y^2)^n,
@@ -683,6 +719,7 @@ where $ a, b \in \Zzz[x,y] $, is $4n + 4$.
 
 \end{corollary}
 \begin{proof}
+\bf
 It is sufficient to count the orbits of a representative from each
 equivalence class, where the group action is
 $ \mathfrak{S}_2^\pm \times \mathfrak{S}_2^\pm $.
@@ -849,6 +886,7 @@ $2^2 + 2^2 + 2^2 + 2^2 = 4^2$ & \cellcolor{gray!50} & \cellcolor{gray!0}
 
 \end{center}
 \caption{
+\bf
 Small data values used by
 \emph{numeric\_comparison}
 to differentiate between equivalence classes
@@ -961,6 +999,7 @@ equivalent.
 \end{center}
 
 \caption{
+\bf
 The program \emph{symbolic\_comparison}
 finds particular equivalence relations
 that link different identities together,
@@ -1030,6 +1069,7 @@ Table~\ref{table:4D}.
 
 \end{center}
 \caption{
+\bf
 The conjectured number of equivalence
 classes $ \kappa $  
 in the case where $p = m = 4$.
@@ -1045,6 +1085,7 @@ in the case where $p = m = 4$.
 
 \begin{theorem}
 \label{theorem_8_classes}
+\bf
 In the case where  $p = m = 4$ and $n = 2$,
 the following identities 
 arise from 8 different
@@ -1109,6 +1150,7 @@ Furthermore, each identity
 is generated by a product of quaternions. 
 \end{theorem}
 \begin{proof}
+\bf
 Identity~\eqref{Identity_1} follows from taking the norm of the quaternion product
     \begin{align*}
     (x + iy + jz + kw)(x + iy + jz + kw) 
@@ -1158,24 +1200,26 @@ Finally, Identity~\eqref{Identity_8} follows from taking the norm of the quatern
 
 
 \begin{conjecture}
+\bf
 In the case where  $p = m = 4$ and $n = 2$,
 there are exactly 8 equivalence classes, which have representatives
 given in Theorem~\ref{theorem_8_classes}.
 \end{conjecture}
 
 \begin{remark}
+\bf
 The cardinality of each equivalence class in the
 set of solutions to $a^2 + b^2 + c^2 + d^2 = (x^2 + y^2 + z^2 + w^2)^2$
 can be calculated using the group action under
 $ \mathfrak{S}_4^\pm \times \mathfrak{S}_4^\pm $.
 The orders of these orbits are, respectively,
-1536, 1152, 8, 2304, 4608, 2304, 3072, 3072.
+$1536$, $1152$, $8$, $2304$, $4608$, $2304$, $3072$, $3072$.
 Naturally, all of those numbers are factors of
 $ | \mathfrak{S}_4^\pm \times \mathfrak{S}_4^\pm | = 2^{14} 3^2 $.
 The programs \emph{numeric\_comparison} and \emph{symbolic\_comparison} 
 both used the space of all products of relevant quaternions,
 giving a different list of cardinalities:
-4, 3, 8, 6, 12, 6, 8, 8.
+$4$, $3$, $8$, $6$, $12$, $6$, $8$, $8$.
 In fact, the programs were able to ignore large
 portions of this space for theoretical reasons,
 which is why the cardinalities in this list are
@@ -1206,6 +1250,7 @@ This is made more precise in
 Conjecture~\ref{conjecture_Ehrenborg-Leep}.
 
 \begin{conjecture}
+\bf
 Let $ \alpha \in \Lll[x,y,z,w] $.
 If the norm $ \N(\alpha) $ has a nontrivial
 factorization over $ \Zzz[x,y,z,w] $,
@@ -1215,6 +1260,7 @@ factorization over $ \Lll[x,y,z,w] $.
 The preceding conjecture implies the following conjecture.
 \begin{conjecture}
 \label{conjecture_Ehrenborg-Leep}
+\bf
 Let $ (a, b, c, d) $ be a tuple such that
 \[
 a^2 + b^2 + c^2 + d^2 = (x^2 + y^2 + z^2 + w^2)^n,
@@ -1245,10 +1291,12 @@ by  $\deg_x \theta = e_1 $. We use analogous notation for the
 other three variables.
 
 \begin{remark}
+\bf
 Any element of $ \Zzz[x,y,z,w] $ is a sum of monomials.
 \end{remark}
 
 \begin{lemma}
+\bf
 If $a, b, c, d \in \Zzz[x,y,z,w]$, and
 \[
 a^2 + b^2 + c^2 + d^2 = x^2 + y^2 + z^2 + w^2,
@@ -1256,6 +1304,7 @@ a^2 + b^2 + c^2 + d^2 = x^2 + y^2 + z^2 + w^2,
 then $ (a, b, c, d ) \simeq (x, y, z, w )$.
 \end{lemma}
 \begin{proof}
+\bf
 Write each of $ a,b,c,d $ as sums of monomials, that is, 
 \begin{align*}
 &a = \theta_{11} + \theta_{12} + \dotsb + \theta_{1\alpha},
@@ -1337,6 +1386,7 @@ in $ S $ are the four desired ones.
 
 \begin{theorem}
 \label{theorem_counting_4D}
+\bf
 Assuming Conjecture~\ref{conjecture_Ehrenborg-Leep} holds,
 then the number of solutions $ (a, b, c, d) $ to
 \begin{equation}
@@ -1352,6 +1402,7 @@ is at most
 \]
 \end{theorem}
 \begin{proof}
+\bf
 If Conjecture~\ref{conjecture_Ehrenborg-Leep} holds, any
 solution
 $ (a, b, c, d) $ can be viewed as a quaternion
@@ -1439,6 +1490,7 @@ Summing over all values of $ \gamma $, the number of solutions is
 \end{align*}
 \end{proof}
 \begin{remark}
+\bf
 Note that the proof of Theorem~\ref{theorem_counting_4D}
 gives an upper bound for the number of solutions.
 \end{remark}
@@ -1596,29 +1648,6 @@ less than four.
 
 
 \end{thebibliography}
-
-
-
-
-
-
-\end{document}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
