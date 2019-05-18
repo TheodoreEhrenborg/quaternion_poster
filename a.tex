@@ -9,7 +9,7 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %
-% Last edited: May 10, 2019
+% Last edited: May 18, 2019
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -43,8 +43,7 @@
 \usepackage{enumerate}
 \usepackage{xcolor}
 \usepackage{diagbox}
-
-
+\usepackage{bold-extra}
 
 \usetikzlibrary{math}
 
@@ -179,12 +178,9 @@
 
 
 
-
-
-
-The author's previous work \cite{Ehrenborg_2018}
+My previous work in 2018~\cite{Ehrenborg_2018}
 focused on characterizing 
-integer solutions to
+integer solutions~to
 $a^2 + b^2 + c^2 + d^2 = e^2$.
 Current research explores the polynomial solutions
 in $ \Zzz[x,y,z,w] $ to
@@ -195,14 +191,21 @@ a^2 + b^2 + c^2 + d^2 = e^n,
 where
 $e = x^2 + y^2 + z^2 + w^2$.
 
-In \cite{Ehrenborg_2018} the author characterized integer
-solutions by viewing~\eqref{eq:e^n}
-as a product of two quaternions. This gave
+
+
+
+
+
+I characterized integer
+solutions geometrically and
+by viewing~\eqref{eq:e^n} as a product of two quaternions. This gave
 rise to polynomial solutions to
 $a^2 + b^2 + c^2 + d^2 = e^2$
 with $e = x^2 + y^2 + z^2 + w^2$.
 The paper found that an upper bound for the number
 of such solutions is $57$.
+
+
 
 Goal 1: Improve the bound for the number of solutions.
 
@@ -316,8 +319,13 @@ Definition~\ref{def:general} implies that the following is true:
 
 
 
-\begin{problem}
+
+
+
+\noindent
 \bf
+{\fontsize{30}{30}\selectfont 
+\textbf{\textsc{Main Problem.}}}
 Determine the number of
 equivalence classes of the set of all tuples
  $ \tau = ( \tau_1, \dotsc, \tau_p) $,
@@ -328,7 +336,11 @@ where
 = 
 \left( \sum_{i = 1}^{m}  x_i ^ 2  \right) ^ n 
 \end{equation}
-\end{problem}
+
+
+
+
+
 This problem is most easily attacked when we
 view $ \left( \sum_{i = 1}^{m}  x_i ^ 2  \right) ^ n $
 as the norm of a product of complex numbers or quaternions.
